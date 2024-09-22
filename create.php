@@ -23,6 +23,7 @@
         ':username' => $username ,
        ]);
 
+       header("Location:index.php");
     }
   }
 
