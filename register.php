@@ -43,22 +43,22 @@
     <!-- <img class="mb-4 text-center" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
     <h1 class="h3 mt-5 fw-normal text-center">Please Register</h1>
 
-    <div class="form-floating">
+    <div class="form-floating mt-3">
       <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
 
-    <div class="form-floating">
+    <div class="form-floating mt-3">
       <input name="username" type="text" class="form-control" id="floatingInput" placeholder="username">
       <label for="floatingInput">Username</label>
     </div>
 
-    <div class="form-floating">
+    <div class="form-floating mt-3">
       <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 
-    <button name="submit" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button name="submit" class="w-100 btn btn-lg btn-primary mt-4" type="submit">Sign Up</button>
     <h6 class="mt-3">Aleardy have an account?  <a href="login.php">Login</a></h6>
 
   </form>

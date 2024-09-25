@@ -51,11 +51,11 @@ if(!isset($_SESSION['username'])) {
 
 
     <div class="form-floating mt-4">
-    <textarea name="body" rows="20" class="form-control" placeholder="body"></textarea>
+    <textarea name="body" rows="50" cols= "100" class="form-control" placeholder="body"></textarea>
     <label for="loatingPassword">Body</label>
     </div>
 
-    <button name="submit" class="w-50 btn btn-lg btn-primary mt-4s" type="submit">Create Post</button>
+    <button name="submit" class="w-50 btn btn-lg btn-primary mt-4" type="submit">Create Post</button>
 
   </form>
 </main>
