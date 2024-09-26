@@ -21,7 +21,7 @@ session_start();
 
 
 
-
+    <link rel="stylesheet" type="text/css" href="rating-plugin/src/css/star-rating-svg.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css
       " rel="stylesheet">
 

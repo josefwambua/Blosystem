@@ -33,6 +33,9 @@ if(isset($_GET['id'])){
   <div class="card-body mt-4">
     <h5 class="card-title"><?php echo $posts->title; ?></h5>
     <p class="card-text"><?php echo $posts->body; ?></p>
+    <div class="my-rating"></div>
+    <br>
+    <input id="rating" type="text"value=""> 
   </div>
 </div>
 </div>
@@ -137,5 +140,16 @@ $(document).ready(function() {
       fetchComments();
     }, 500);
   }
+
+
+  // rating system
+  $(".my-rating").starRating({
+    starSize: 25,
+    callback: function(currentRating, $el){
+        // make a server call here
+        $("#rating").val(currentRating);
+    }
+});
+
 });
 </script>
