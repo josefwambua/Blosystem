@@ -3,6 +3,7 @@
 
 <?php 
 
+//  checking if the session is on
 if(!isset($_SESSION['username'])) {
   header("location: index.php");
 }
@@ -10,21 +11,28 @@ if(!isset($_SESSION['username'])) {
 
 
 
+
+
+// on clicking submit button
   if(isset($_POST['submit'])) {
 
+// if one of the fields are empty
     if($_POST['title'] == '' OR $_POST['body'] == '') {
       echo "some inputs are empty";
       
     } else {
+      // enter the title and the body of the comment
 
 
       $title = $_POST['title'];
       $body = $_POST['body'];
       $username = $_SESSION['username'];
 
+      // inserting on the db - posts table
       $insert = $conn->prepare("INSERT INTO posts (title, body, username) 
        VALUES (:title, :body, :username)");
 
+// Saving and executing 
        $insert->execute([
         ':title' => $title,
         ':body' => $body,
