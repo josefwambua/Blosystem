@@ -1,4 +1,5 @@
 <?php 
+
 require "includes/header.php"; 
 require "config.php"; 
 // Check if the user is logged in
@@ -8,18 +9,23 @@ if (!isset($_SESSION['username'])) {
   exit();
 }
 
-// Getting user id
+// getting the user id
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-// select user id from the db
+
+    // quering the id from the db
+  
     $onePost = $conn->query("SELECT * FROM posts WHERE id = '$id'");
     
     if ($onePost) {
+      // getting posts 
         $posts = $onePost->fetch(PDO::FETCH_OBJ);
     } else {
+      // otherwise
         echo "There was an error" ;
     }
-  // getting comments with reference from the posts id
+    // getting the comments
     $comments = $conn->query("SELECT * FROM comments WHERE post_id = '$id'");
     
     if ($comments) {
@@ -29,16 +35,13 @@ if(isset($_GET['id'])){
     }
 }
 ?>
-  <!-- displaying the posts title and body in the frontend -->
 <div class="row">
 <div class="card mt-5">
   <div class="card-body mt-4">
     <h5 class="card-title"><?php echo $posts->title; ?></h5>
     <p class="card-text"><?php echo $posts->body; ?></p>
-    <!-- rating div -->
     <div class="my-rating"></div>
-    <br>
-    <!-- showcasing the rate inside an input -->
+    <br>  
     <input id="rating" type="text"value=""> 
   </div>
 </div>
@@ -72,7 +75,7 @@ if(isset($_GET['id'])){
  
 </div>
 
-
+// fetching the objects from the database
 <div class="row">
   <?php foreach ($comment as $singleComment): ?>
 <div class="card mt-5">
@@ -92,10 +95,11 @@ if(isset($_GET['id'])){
 
 <?php require "includes/footer.php"; ?>
 
-<!-- AJAX JQUERY -->
+
 <script>
 $(document).ready(function() {
-  $('#comment_data').on('submit', function(e) { // Ensure form ID matches
+  // checking and matching the submit ids
+  $('#comment_data').on('submit', function(e) {
     e.preventDefault();
     var formdata = $(this).serialize() + '&submit=submit';
 
