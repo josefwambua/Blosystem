@@ -6,11 +6,12 @@
     /* line-height: 1.5; */
     /* color: teal;  */
 /* } */
-
-
+/*  */
+/*  */
 
 h1, h2, h3, h4, h5, h6 {
     margin: 1rem 0;
+    font-family: emphonic,monospace;
 }
 
 a {
@@ -46,19 +47,13 @@ img {
     color: whitesmoke;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .custom-bg {
-        padding: 0.5rem; 
-    }
-}
-body {
-    height: auto;
-    margin: 0;
-    padding-bottom: 50px;
-    color: dodgerblue;
-}
-
+/* body { */
+    /* height: auto; */
+    /* margin: 0; */
+    /* padding-bottom: 50px; */
+    /* background-color: dodgerblue; */
+/* } */
+/*  */
 .fixed-footer {
     margin-top: 30px;
     position: fixed;
@@ -67,8 +62,16 @@ body {
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
-    background-color: dodgerblue !important;
+    background-color: dodgerblue !important; 
     padding: 2rem;
     z-index: 1000;
-    color: white;
+    background-image: url('https://unsplash.com/photos/a-brick-walkway-with-a-brick-wall-UlHSLdwP7I4') !important;
+    
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-bg {
+        padding: 0.5rem; 
+    }
 }
